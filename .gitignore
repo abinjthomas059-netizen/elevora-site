@@ -1,0 +1,31 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Environment variables (never commit secrets)
+.env
+.env.local
+.env.*.local
+
+# Build output
+dist/
+dist/public/
+build/
+
+# TypeScript build cache
+*.tsbuildinfo
+
+# Vite cache
+.vite-temp/
+.vite/
+
+# Editor/OS files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*

@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Elevora"
+description = "A polished company website for Elevora, a digital design and website studio helping entrepreneurs, professionals, and growing brands turn their ideas into memorable online experiences."
+version = "1.0.0"
+id = "artifacts/elevora-site"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 23836
+
+[services.development]
+run = "pnpm --filter @workspace/elevora-site run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/elevora-site", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/elevora-site/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "23836"
+BASE_PATH = "/"
